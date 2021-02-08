@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+.App {
+  /* text-align: center; */
+  background-color: #ffffff;
+  min-height: 100vh;
+  color: rgb(0, 0, 0);
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.title_food {
+  display: flex;
+}
+
+.title_food span {
+  margin-right: 20px;
+}
+
+.title_food div img {
+  border-radius: 10px;
+}
+
+.container {
+  width: 80%;
+}
+
+.container_loop {
+  display: flex;
+  justify-content: end;
+  /* flex-wrap: wrap; */
+  width: 20%;
+}
+
+.container_loop img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.choice_categorie {
+  /* background: rgb(126, 12, 12); */
+  /* width: 25%; */
+}
+
+.container_categorie {
+  /* background: rgb(255, 174, 174); */
+  display: flex;
+}
+
+.container_categorie:first-child {
+  /* background: rgb(158, 27, 27); */
+  margin-right: 3vw;
+}
+
+.container_categorie div h4 {
+  margin: 10px 0px 0px 10px;
+}
+
+.container_categorie div p {
+  /* background: rgb(126, 78, 78); */
+  width: 245px;
+  height: 45px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0px 0px 10px;
+  color: rgb(136, 136, 136);
+  font-weight: 400;
+}
+
+/* .container_categorie div:last-child {
+  background: rgb(75, 67, 67);
+
+} */
