@@ -1,21 +1,35 @@
+import {useEffect, useState} from 'react';
 
-const Categorie = ({data, isLoading}) => {
+
+const Meals = ({data}) => {
+    const [panier, setPanier] = useState([])
     return(
-        
-        <div className="container_categorie">
-            
-            <div>
-                <h4>{data.title}</h4>
-                <p>{data.description}</p>
-                <p>{data.price}</p>
-                {/* <p>{data.popular}</p> */}
-            </div>
-            <div>
-                <img src={data.picture}/>
-            </div> 
-            
-        </div>
+        <div className="container_meals" >
+            {data.map((elem, index) => {
+                return(
+                    elem.description.length > 0 &&  elem.picture  && (
+                    <div className="info_meals" 
+                         key={index} 
+                         onClick={() => {
+                            //  console.log(elem.id)
+                            const newPanier =[...panier];
+                            newPanier.push(1); // je pousse un index dans mon tableau
+                            setPanier(newPanier)
+                            }}>
+                        <div >
+                            <h4>{elem.title}</h4>
+                            <p>{elem.description}</p>
+                            <p>{elem.price}</p>
+                        </div>
+                        <div>
+                            <img src={elem.picture}/>
+                        </div> 
+                    </div>
+                    )
+                )
+            })}
+        </div>   
     )
 }
 
-export default Categorie;
+export default Meals;

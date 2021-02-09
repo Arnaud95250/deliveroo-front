@@ -4,11 +4,14 @@ import {useEffect, useState} from 'react';
 import Categorie from './Categorie';
 import Header from './Header';
 import Footer from './Footer';
+import Teaches from './Teaches';
+// import Panier from './Panier';
 
 
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [panier, setPanier] = useState([])
 
   useEffect(() => {
       // Requete Axios
@@ -29,52 +32,38 @@ function App() {
   }, []);
 
 
-  return (
-    <div className="App">
-      <Header/>
-      <div className="title_food">
-        <div>
-          <h1>{data.restaurant.name}</h1>
-          <span>{data.restaurant.description}</span>
-        </div> 
-        
-        <div>
-          <img src={data.restaurant.picture} width="270px"/>
-        </div>
+    return (
+      <div className="App">
+        <Header/>
+
+         {isLoading ? (
+              <span>En cours de chargement... </span>
+            ) : (
+              <div>
+                <Teaches data={data.restaurant}/>
+                <div className="container_panier">
+                    <div>
+                        <button type="#">Valider mon panier</button>
+                    </div>
+                    <div>
+                        {/* {data.map((panier, index) => {
+                            return (
+                                <p></p>
+                            )
+                        })} */}
+                    </div>
+                </div>
+                {/* <Panier data={data.restaurant} /> */}
+                <Categorie data={data.categories} />
+
+
+
+                  
+              </div>
+            )}        
+        <Footer/>
       </div>
-      <div className="container">
-      {isLoading ? ( <span>En cours de chargement... </span> ) : ( data.categories.map((elem, index) => {
-              return (
-                <>
-                
-                <Categorie
-                data={elem}
-                // key={index}
-                // isLoading={isLoading}
-                // setIsLoading={setIsLoading}
-                />
-                </>
-              );
-            })
-          )} 
-      </div>
-      
-      <Footer/>
-
-       {/* {isLoading ? (
-            <span>En cours de chargement... </span>
-          ) : (
-            data.categories.map((elem, index) => {
-              return (
-                <p key={index}>{elem.name}</p>
-              );
-            })
-          )} */}
-
-
-
-    </div>
-  );
+    );
 }
 
 export default App;

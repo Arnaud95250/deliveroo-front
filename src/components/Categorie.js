@@ -1,20 +1,21 @@
 import Meals from'./Meals';
 
-const Categorie = ({data, isLoading}) => {
+const Categorie = ({data}) => {
     return(
-        <div className="choice_categorie">
-            <h2>{data.name}</h2>
-            <div className="container_loop">
-            {isLoading ? ( <span>En cours de chargement... </span> ) : ( data.meals.map((elem, index) => {
+      <div className="container">
+        <div className="loop_categorie">
+            {data.map((elem, index) => {
               return (
-                <Meals
-                data={elem}
-                />
+                elem.meals.length > 0 && (
+                  <div key={index} className="index_meals">
+                    <h3>{elem.name}</h3>
+                    <Meals data={elem.meals} />
+                  </div>
+                )
               );
-            })
-          )}
-         </div>
+            })}
         </div>
+      </div>
     )
 }
 
