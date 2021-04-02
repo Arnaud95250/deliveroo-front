@@ -11,7 +11,9 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const reponse = await axios.get("http://localhost:3001/");
+        const reponse = await axios.get(
+          "https://deliveroo--back.herokuapp.com/"
+        );
         // console.log(reponse.data);
         setData(reponse.data);
         setIsLoading(false);
