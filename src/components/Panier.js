@@ -100,7 +100,9 @@ const Panier = ({ panier, setPanier, counter }) => {
           <span>Total</span>
           <span>{finalPrice + "€"}</span>
         </div>
-        <button type="#">Valider mon panier</button>
+        <button onClick={() => window.location.reload()}>
+          Valider mon panier
+        </button>
       </div>
 
       {shop ? (
@@ -169,7 +171,9 @@ const Panier = ({ panier, setPanier, counter }) => {
               <span>Total</span>
               <span>{finalPrice + "€"}</span>
             </div>
-            <button type="#">Valider mon panier</button>
+            <button onClick={() => window.location.reload()}>
+              Valider mon panier
+            </button>
           </div>
         </div>
       ) : (
