@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+.App {
+  background-color: #ffffff;
+  min-height: 100vh;
+  color: rgb(0, 0, 0);
+  width: 90%;
+  margin: 0 auto;
+}
+/***********Debut css Header*******************/
+#header{
+  width: 100%;
+  img{
+    width:200px;
+  }
+}
+/***********Fin css Header********************/
+/***********Debut css Home********************/
+#home{
+  width: 100%;
+}
+/***********Debut css Home*******************/
+/***********Debut css footer*****************/
+#footer{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0px 30px 0px;
+  span{
+    font-weight: 700;
+    
+  }
+}
+/***********Fin css footer*******************/
+/***********Debut css Teache*****************/
+#teaches{
+  display: flex;
+  p{
+    margin-right: 90px;
+    margin-top: 20px;
+  }
+  img {
+    border-radius: 10px;
+    width: 25vw;
+  }
+}
+/***********Fin css Teache*******************/
+/***********Début css Categories*************/
+#categorie{
+    display: flex;
+    // width: 100%;
+  img {
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .counter{
+    display: none;
+  }
+}
+/***********Fin css Categories*************/
+/***********Début css Meals****************/
+.index_meals {
+  // background: yellow;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#meals{
+    width: 80vw;
+    .content_mails{
+      display: flex;
+      flex-wrap: wrap;
+      width: 85%;
+      >div {
+        border: solid 0.5px black ;
+        border-radius: 5px;
+        background: rgb(251, 251, 251);
+        display: flex;
+        justify-content: space-between;
+        width: 45%;
+        height: auto;
+        margin: 5px;
+        cursor: pointer;
+      }
+      >div:hover {
+        box-shadow: 0px 0px 3px 2px rgb(218, 218, 218);
+        transition: 0.2s;
+      }
+      >div div h4 {
+        margin: 5px 0px 0px 10px;
+      }
+      >div div p {
+        width: 90%;
+        height: 45px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 10px 0px 0px 10px;
+        color: rgb(136, 136, 136);
+        font-weight: 400;
+      }
+    }
+}
+/***********Fin css Meals*****************/
+/***********Debut css Panier**************/
+#panier {
+  background: rgb(212, 212, 212);
+  width: 25%;
+  height: auto;
+  right: 5%;
+  margin-top: 20px;
+  position: absolute;
+  border: none;
+  border-radius: 5px;
+  button {
+    background: #00CDBC;
+    width: 96%;
+    margin: 2%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  .content_panier{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+     div{
+      display: flex;
+      line-height: 25px;
+      img{
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+        cursor: pointer;
+      }
+    }
+    p:not(:last-child){
+      text-align: left;
+      width: 100%;
+      margin-left: 5px;
+      overflow: hidden;
+    }
+    p:last-child{
+      text-align: right;
+
+    }
+  }
+  .info_price{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  .shopping{
+    display: none;
+  }
+  .hidden_responsive{
+    display: none;
+  }
+}
+/***********Fin css Panier****************/
+
+
+@media(max-width: 900px){
+  /***********Début css Header****************/
+#header{
+  width: 100%;
+  img{
+    width:50%;
+  }
+}
+/***********Fin css Header********************/
+/***********Debut css Teache******************/
+#teaches{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  p{
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+  }
+  img {
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+/***********Fin css Teache*******************/
+/***********Début css Categories*************/
+#categorie{
+.counter{
+  display: block;
+  position: fixed;
+  background: #00CDBC;
+  height: 25px;
+  width: 25px;
+  border-radius: 15px;
+  top: 3%;
+  right: 4%;
+  color: white;
+  text-align: center;
+}
+}
+/***********Fin css Categories*************/
+/***********Début css Meals******************/
+.index_meals {
+  width: 100%;
+}
+#meals{
+  width: 100%;
+  .content_mails{
+    width: 100%;
+    >div {
+      width: 100%;
+      margin: 10px;
+    }
+    >div div p {
+      font-weight: 500;
+      font-size: 15px;
+    }
+  }
+}
+/***********Fin css Meals*******************/
+/***********Debut css Panier****************/
+#panier {
+  background: rgb(212, 212, 212);
+  width: 70vw;
+  position: fixed;
+  margin-top: 0px;
+  top: 12%;
+  right: 5%;
+  .hidden{
+    display: none;
+  button {
+    background: #00CDBC;
+    width: 98%;
+    margin: 1%;
+    padding: 10px;
+  }
+}
+.hidden_responsive{
+  display: block;
+}
+.scroll{
+  display: block;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+  .shopping{
+    display: flex;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background: white;
+    border-radius: 100px;
+    border: solid 1px #00CDBC;
+    top: 4%;
+    right: 4%;
+    cursor: pointer;
+    
+    img{
+      width: 30px;
+      height: 30px;
+    }
+  
+    
+  }
+}
+/***********Fin css Panier******************/
+}

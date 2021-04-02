@@ -1,8 +1,11 @@
 import logo from "../assets/img/deliveroo.png";
 
 const Header = () => {
-    return(
-        <img src={logo} alt="deliveroo" width="200px"/>
-    )};
+  return (
+    <div id="header">
+      <img src={logo} alt="deliveroo" />
+    </div>
+  );
+};
 
 export default Header;
