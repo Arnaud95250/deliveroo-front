@@ -12,7 +12,7 @@ function Home() {
     const fetchData = async () => {
       try {
         const reponse = await axios.get(
-          "https://deliveroo--back.herokuapp.com/"
+          "https://deliveroo--back.herokuapp.com/home"
         );
         // console.log(reponse.data);
         setData(reponse.data);
