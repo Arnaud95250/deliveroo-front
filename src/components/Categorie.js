@@ -73,7 +73,13 @@ const Categorie = ({ data }) => {
         })}
       </div>
       <Panier panier={panier} setPanier={setPanier} />
-      {check ? <div className="counter">+1</div> : <div></div>}
+      {check ? (
+        <div className="counter">
+          <p>+1</p>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };
